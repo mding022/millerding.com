@@ -11,7 +11,7 @@ export default function Component() {
             <div className="text-center space-y-4">
                 <h1 className="text-3xl font-bold">millerding.com</h1>
                 <p>
-                    use{" "}
+                    link to{" "}
                     <Link href="/ae" className="text-primary hover:underline" prefetch={false}>
                         after effects api
                     </Link>
@@ -20,6 +20,18 @@ export default function Component() {
                     link to{" "}
                     <Link href="/faceswap" className="text-primary hover:underline" prefetch={false}>
                         faceswap
+                    </Link>
+                </p>
+                <p>
+                    link to{" "}
+                    <Link href="/fsvideo" className="text-primary hover:underline" prefetch={false}>
+                        faceswap video
+                    </Link>
+                </p>
+                <p>
+                    link to{" "}
+                    <Link href="/removebg" className="text-primary hover:underline" prefetch={false}>
+                        remove bg
                     </Link>
                 </p>
             </div>
