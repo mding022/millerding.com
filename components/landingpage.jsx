@@ -34,6 +34,12 @@ export default function Component() {
                         remove bg
                     </Link>
                 </p>
+                <p>
+                    link to{" "}
+                    <Link href="/aieraser" className="text-primary hover:underline" prefetch={false}>
+                        ai eraser
+                    </Link>
+                </p>
             </div>
         </div>
     )
