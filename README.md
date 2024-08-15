@@ -1,1 +1,2 @@
-portfolio website# millerding.com
+my website
+portfolio: millerding.com/portfolio
