@@ -1,3 +1,5 @@
-my website for my various projects
-link to website: https://millerding.com
+#https://millerding.com
+
+my website for various projects
+
 portfolio link: https://millerding.com/portfolio
