@@ -98,16 +98,21 @@ export default function Component() {
           <p className="text-black mt-2">
             Selected template: <span className="font-bold">transition.aep</span>
           </p>
-          {}
           {videoUrl && (
             <div className="flex justify-center my-4">
-              <div style={{ width: '200', marginTop: '12px' }}>
-                <video src={videoUrl} controls autoPlay style={{ width: '100%' }}>
+              <div className="flex justify-center items-center" style={{ maxWidth: '150px', width: '100%', marginTop: '12px' }}>
+                <video
+                  src={videoUrl}
+                  controls
+                  autoPlay
+                  style={{ width: '100%', borderRadius: '8px' }} // Adjust borderRadius as needed
+                >
                   Your browser does not support video playing.
                 </video>
               </div>
             </div>
           )}
+
         </section>
         <section className="mb-12">
           <div className="p-6 rounded-lg shadow w-full max-w-md mx-auto">
