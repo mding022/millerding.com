@@ -1,34 +1,85 @@
 'use client';
 
+import React, { useState } from 'react'
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export default function Component() {
-  const sendPostRequest = async () => {
+  const [generateText, setGenerateText] = useState("Generate Video");
+  const [uploadText, setUploadText] = useState("Upload Images");
+  const [videoUrl, setVideoUrl] = useState(null);
+
+  const sendUploadPostRequest = async () => {
+
     const image1 = document.getElementById("image1").files[0];
     const image2 = document.getElementById("image2").files[0];
     const formData = new FormData();
-    
+
     formData.append("images", image1);
     formData.append("images", image2);
     formData.append("request_id", "123");
 
     try {
+      setUploadText("Uploading...");
       let response = await fetch('https://d392-66-171-229-142.ngrok-free.app/uploadfiles', {
         method: "POST",
         body: formData,
       });
-    if (response.status === 200) {
-      alert("Successfully connected to server.");
-    } else {
-      alert("Failed with status: " + response.status);
+      if (response.status === 200) {
+        setUploadText("200: Success");
+        setTimeout(() => {
+          setUploadText("Change Images");
+        }, 2000);
+      } else {
+        setUploadText(response.status + ": Failed");
+        setTimeout(() => {
+          setUploadText("Upload Images");
+        }, 1000);
+      }
+    } catch (error) {
+      setUploadText(error + ": Failed");
+      setTimeout(() => {
+        setUploadText("Upload Images");
+      }, 1000);
     }
-  } catch (error) {
-    console.error("Error sending POST request:", error);
-    alert("Failed to send request due to an error.");
-  }
+  };
+
+  const sendCreatePostRequest = async () => {
+    setGenerateText("Loading...");
+    const formData = new FormData();
+
+    formData.append("request_id", "123");
+    formData.append("template", "transition.aep");
+
+    try {
+      let response = await fetch('https://d392-66-171-229-142.ngrok-free.app/create', {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.status === 200) {
+        setGenerateText("Success");
+        setTimeout(() => {
+          setGenerateText("Generate Video");
+        }, 1000);
+        const blob = await response.blob();
+        const vurl = URL.createObjectURL(blob);
+        setVideoUrl(vurl);
+      } else {
+        setGenerateText(response.status + ": Failed")
+        setTimeout(() => {
+          setGenerateText("Generate Video");
+        }, 2000)
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setGenerateText(error + ": Failed")
+      setTimeout(() => {
+        setGenerateText("Generate Video");
+      }, 2000)
+    }
   };
 
   return (
@@ -47,6 +98,16 @@ export default function Component() {
           <p className="text-black mt-2">
             Selected template: <span className="font-bold">transition.aep</span>
           </p>
+          {}
+          {videoUrl && (
+            <div className="flex justify-center my-4">
+              <div style={{ width: '200', marginTop: '12px' }}>
+                <video src={videoUrl} controls autoPlay style={{ width: '100%' }}>
+                  Your browser does not support video playing.
+                </video>
+              </div>
+            </div>
+          )}
         </section>
         <section className="mb-12">
           <div className="p-6 rounded-lg shadow w-full max-w-md mx-auto">
@@ -65,13 +126,20 @@ export default function Component() {
         <div className="flex justify-center gap-4">
           <Button
             as="button"
-            onClick={sendPostRequest}
-            className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+            onClick={sendUploadPostRequest}
+            className="bg-gray-800 text-white px-7 py-3 rounded-lg hover:bg-gray-700 transition-colors"
           >
-            Generate Video
+            {uploadText}
+          </Button>
+          <Button
+            as="button"
+            onClick={sendCreatePostRequest}
+            className="bg-gray-800 text-white px-7 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            {generateText}
           </Button>
           <Link href="/ae">
-            <Button className="bg-gray-300 text-black px-8 py-3 rounded-lg hover:bg-gray-400 transition-colors">
+            <Button className="bg-gray-300 text-black px-7 py-3 rounded-lg hover:bg-gray-400 transition-colors">
               Back
             </Button>
           </Link>
