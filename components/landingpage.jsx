@@ -8,31 +8,31 @@ export default function Component() {
                 <h1 className="text-3xl font-bold">millerding.com</h1>
                 <p>
                     link to{" "}
-                    <Link href="/ae" className="text-primary hover:underline" prefetch={false}>
+                    <Link href="/portfolio" className="text-indigo-400 font-bold hover:underline" prefetch={false}>
+                        portfolio
+                    </Link>
+                </p>
+                <p>
+                    link to{" "}
+                    <Link href="/ae" className="text-indigo-400 font-bold hover:underline" prefetch={false}>
                         after effects api
                     </Link>
                 </p>
                 <p>
-                    link to{" "}
-                    <Link href="/faceswap" className="text-primary hover:underline" prefetch={false}>
-                        faceswap
-                    </Link>
-                </p>
-                <p>
-                    link to{" "}
-                    <Link href="/fsvideo" className="text-primary hover:underline" prefetch={false}>
+                    link to (unfinished){" "}
+                    <Link href="/fsvideo" className="text-indigo-400 font-bold hover:underline" prefetch={false}>
                         faceswap video
                     </Link>
                 </p>
                 <p>
-                    link to{" "}
-                    <Link href="/removebg" className="text-primary hover:underline" prefetch={false}>
+                    link to (unfinished){" "}
+                    <Link href="/removebg" className="text-indigo-400 font-bold hover:underline" prefetch={false}>
                         remove bg
                     </Link>
                 </p>
                 <p>
-                    link to{" "}
-                    <Link href="/aieraser" className="text-primary hover:underline" prefetch={false}>
+                    link to (unfinished){" "}
+                    <Link href="/aieraser" className="text-indigo-400 font-bold hover:underline" prefetch={false}>
                         ai eraser
                     </Link>
                 </p>

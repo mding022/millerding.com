@@ -6,10 +6,7 @@ export default function Component() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-24">
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Select a Video Template{"  "}
-          <Link href="/" className="text-3xl font-bold tracking-tight bg-amber-100 hover:bg-orange-100">
-            {" "}Back{" "}
-          </Link> </h1>
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Select a Video Template{"  "}</h1>
         <p className="mt-2 text-muted-foreground md:text-xl">
         </p>
       </div>

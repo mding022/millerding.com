@@ -1,17 +1,17 @@
-// This is the root layout component for your Next.js app.
-// Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './ae.css'
 
-const fontHeading = Inter({
+const fontHeading = Roboto({
     subsets: ['latin'],
+    weight: ['100', '300', '400', '500', '700', '900'], // All available weights
     display: 'swap',
     variable: '--font-heading',
 })
 
-const fontBody = Inter({
+const fontBody = Roboto({
     subsets: ['latin'],
+    weight: ['100', '300', '400', '500', '700', '900'], // All available weights
     display: 'swap',
     variable: '--font-body',
 })
