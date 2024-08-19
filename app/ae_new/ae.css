@@ -4,27 +4,45 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 222.2 84% 4.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
-        --primary: 221.2 83.2% 53.3%;
-        --primary-foreground: 210 40% 98%;
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222.2 47.4% 11.2%;
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 44%;
-        --accent: 210 40% 96.1%;
-        --accent-foreground: 222.2 47.4% 11.2%;
+        --background: 285 100% 98%;
+        --foreground: 240 5% 20%;
+        --card: 240 15% 92%;
+        --card-foreground: 240 5% 20%;
+        --popover: 240 15% 92%;
+        --popover-foreground: 240 5% 20%;
+        --primary: 257 25% 54%;
+        /*selected dark purple*/
+        --primary-foreground: 0 0% 100%;
+        --secondary: 240 15% 92%;
+        --secondary-foreground: 240 5% 20%;
+        --muted: 240 15% 92%;
+        --muted-foreground: 240 5% 20%;
+        --accent: 257 25% 71%;
+        /*hovering over accent*/
+        --accent-foreground: 0 0% 100%;
         --destructive: 0 72% 51%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 221.2 83.2% 53.3%;
-        --radius: 0.5rem;
+        --destructive-foreground: 0 0% 100%;
+        --border: 240 8% 25%;
+        --input: 240 8% 25%;
+        --ring: 268 65% 55%;
+        --radius: 0.75rem;
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1500ms ease-out;
 }
 
 @layer base {

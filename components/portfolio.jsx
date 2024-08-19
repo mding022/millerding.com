@@ -7,10 +7,39 @@ import { useEffect, useState } from "react";
 
 export default function Component() {
   const [animate, setAnimate] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(true);
+      setLoading(false);
+    }, 1000); // Simulate loading time
   }, []);
+
+  const Skeleton = ({ width, height }) => (
+    <div
+      className="animate-pulse bg-gray-200 rounded"
+      style={{ width, height }}
+    ></div>
+  );
+
+  if (loading) {
+    return (
+      <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-visible">
+        <main className="flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20">
+          <section id="about" className="mb-12 md:mb-15 lg:mb-16">
+            <Skeleton width="300px" height="40px" />
+            <Skeleton width="500px" height="20px" className="mt-4" />
+          </section>
+          <section id="education" className="mb-10 md:mb-14 lg:mb-16">
+            <Skeleton width="200px" height="30px" />
+            <Skeleton width="600px" height="100px" className="mt-4" />
+          </section>
+          {/* Repeat for other sections as needed */}
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-visible">
@@ -28,7 +57,7 @@ export default function Component() {
           <h2 className="text-3xl font-bold tracking-tighter mb-4">Education</h2>
           <div className="grid gap-6">
             <div>
-              <h3 className="text-2xl font-bold">Honours Bachelor of Science in Computer Science, Minor in Economics</h3>
+              <h3 className="text-2xl font-bold">Honours B.Sc in Computer Science, Minor in Economics</h3>
               <p className="text-muted-foreground">University of Ottawa, 2023 - 2027</p>
               <p className="text-muted-foreground">CGPA: 9.3/10.0</p>
             </div>
@@ -170,7 +199,7 @@ export default function Component() {
                 </li>
               </ul>
               <div className="mt-4">
-                <Button variant="outlined" color="inherit" endIcon={<OpenInNewIcon />} href="https://drive.google.com/file/d/18hyVdAqEOmCaAM39aeFVzDW1PpFVW3hr/view?usp=sharing" target="_blank">
+                <Button variant="outlined" color="inherit" endIcon={<OpenInNewIcon />} href="/resume.pdf" target="_blank">
                   View Resume
                 </Button>
               </div>
@@ -179,25 +208,5 @@ export default function Component() {
         </section>
       </main>
     </div>
-  )
-}
-
-function CodeIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    </svg>
-  )
+  );
 }

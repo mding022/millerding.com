@@ -1,24 +1,49 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
+import React, { useEffect, useState } from 'react'
 import Link from "next/link"
 
 export default function Component() {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('https://server.millerding.com/temp')
+            .then(response => response.text())
+            .then(text => {
+                const namesArray = text.trim().split('#');
+                setData(namesArray);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 800);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        setAnimate(true);
+    }, []);
+
     return (
         <div className="flex h-screen w-full">
-            <aside className="fixed top-0 left-0 bottom-0 w-28 p-0.5 bg-gray-100 border-r">
-                <div className="flex font-black mb-16 mt-7 text-2xl items-center flex-col">
+            <aside className="fixed top-0 left-0 bottom-0 w-28 p-0.5 bg-background">
+                <div className="flex font-black mb-16 mt-12 text-2xl items-center flex-col">
                     <MenuIcon className="w-8 h-8" />
                 </div>
-                <nav className="space-y-10 font-bold text-gray-700 text-xs">
-                    <div className="flex flex-col items-center text-blue-600 text-center">
+                <nav className="space-y-8 font-bold text-gray-700 text-xs">
+                    <div className="flex flex-col items-center text-center space-y-2">
                         <img
-                            src="/images/bluestar.svg"
-                            width={30}
-                            height={30}
-                            alt="star.svg"
+                            src="/images/selected.svg"
+                            width={56}
+                            height={32}
+                            alt="selected.svg"
                             className="rounded-full"
-                            style={{ aspectRatio: "30/30", objectFit: "cover" }}
+                            style={{ aspectRatio: "56/32", objectFit: "cover" }}
                         />
-                        <span>After Effects</span>
+                            <span>After Effects</span>
                     </div>
                     <div className="flex flex-col items-center">
                         <img
@@ -64,9 +89,13 @@ export default function Component() {
                     </div>
                 </nav>
             </aside>
-            <main className="ml-28 flex-1 p-4 bg-gray-50 overflow-auto">
-                <header className="flex items-center justify-between pb-4 border-b">
-                    <h1 className="text-xl font-bold">After Effects Templates</h1>
+            <main className="ml-28 flex-1 p-4 bg-background overflow-auto">
+                <header className="flex items-center justify-between pb-4 pt-8">
+                    {loading ? (
+                        <SkeletonText className="text-3xl" />
+                    ) : (
+                        <p className={`text-3xl font-normal text-black ${animate ? "animate-fade-in" : ""}`}>{data[0]}</p>
+                    )}
                 </header>
                 <div className="flex items-center space-x-4 py-4">
                     <Button variant="default">
@@ -76,175 +105,18 @@ export default function Component() {
                     <Button variant="outline">Short duration</Button>
                     <Button variant="outline">Long duration</Button>
                 </div>
-                <div className="grid grid-cols-4 gap-4">
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="/transition" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">transition.aep</h2>
-                            <p className="text-xs text-gray-500">Simple before and after</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">NewTemplate.aep</h2>
-                            <p className="text-xs text-gray-500">Three image showcase</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated today</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated yesterday</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated 2 days ago</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated today</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated yesterday</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated 2 days ago</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated today</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated yesterday</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated 2 days ago</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated today</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated yesterday</p>
-                        </div>
-                    </div>
-                    <div className="relative overflow-hidden rounded-lg shadow-lg">
-                        <div className="absolute inset-0 z-10">
-                            <Link href="#" className="absolute inset-0" prefetch={false}>
-                                <span className="sr-only">View</span>
-                            </Link>
-                        </div>
-                        <div className="w-full h-32 bg-gray-200" />
-                        <div className="p-4 bg-background">
-                            <h2 className="text-sm font-bold">Title</h2>
-                            <p className="text-xs text-gray-500">Updated 2 days ago</p>
-                        </div>
-                    </div>
+                <div className="grid grid-cols-6 gap-4">
+                    {loading ? (
+                        Array(30).fill().map((_, index) => (
+                            <SkeletonCard key={index} />
+                        ))
+                    ) : (
+                        <>
+                            <TemplateCard imgSrc="/images/beforeandafter.jpg" title={data[1]} subtitle="Simple before and after" />
+                            <TemplateCard imgSrc="/images/newtemp.jpg" title={data[2]} subtitle="Three image showcase" />
+                            {fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}{fillerTemplate(data[3])}
+                        </>
+                    )}
                 </div>
             </main>
         </div>
@@ -270,7 +142,6 @@ function CheckIcon(props) {
     )
 }
 
-
 function MenuIcon(props) {
     return (
         <svg
@@ -292,22 +163,54 @@ function MenuIcon(props) {
     )
 }
 
-
-function StarIcon(props) {
+function SkeletonText({ className }) {
     return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-    )
+        <div className={`animate-pulse bg-gray-300 rounded w-32 h-8 ${className}`}></div>
+    );
+}
+
+function SkeletonCard() {
+    return (
+        <div className="relative overflow-hidden animate-pulse">
+            <div className="w-full h-32 bg-gray-300 rounded-lg"></div>
+            <div className="p-0 pt-2">
+                <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                <div className="h-3 bg-gray-300 rounded"></div>
+            </div>
+        </div>
+    );
+}
+
+function TemplateCard({ imgSrc, title, subtitle }) {
+    return (
+        <div className="relative overflow-hidden">
+            <div className="absolute inset-0 z-10">
+                <Link href="#" className="absolute inset-0" prefetch={false}>
+                    <span className="sr-only">View</span>
+                </Link>
+            </div>
+            <div className="w-full h-32">
+                <img
+                    src={imgSrc}
+                    alt={title}
+                    className="h-32 w-full object-contain rounded-lg"
+                    style={{ aspectRatio: "400/225", objectFit: "cover" }}
+                />
+            </div>
+            <div className="p-0 pt-2">
+                <p className="text-sm font-semibold text-black">{title}</p>
+                <p className="text-xs text-gray-500">{subtitle}</p>
+            </div>
+        </div>
+    );
+}
+
+function fillerTemplate(title) {
+    return (
+        <TemplateCard
+            imgSrc="/images/cow.jpg"
+            title={title}
+            subtitle="Updated today"
+        />
+    );
 }
