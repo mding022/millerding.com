@@ -9,7 +9,7 @@ export default function Component() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://server.millerding.com/temp')
+        fetch('https://server.millerding.com/aedata')
             .then(response => response.text())
             .then(text => {
                 const namesArray = text.trim().split('#');
@@ -210,7 +210,7 @@ function fillerTemplate(title) {
         <TemplateCard
             imgSrc="/images/cow.jpg"
             title={title}
-            subtitle="Updated today"
+            subtitle="Example description"
         />
     );
 }
