@@ -1,16 +1,18 @@
 // This is the root layout component for your Next.js app.
 // Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
-import { Inter } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
+import { Space_Mono } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
 
-const fontHeading = Inter({
+const fontHeading = DM_Sans({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-heading',
 })
 
-const fontBody = Inter({
+const fontBody = Space_Mono({
+    weight: ["400", "700"],
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-body',

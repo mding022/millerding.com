@@ -1,9 +1,10 @@
-import Component from "../components/landingpage";
+import Image from "next/image";
+import Component from "../components/portfolio";
 
 export default function Home() {
-    return (
-        <main className="flex flex-col items-center justify-center min-h-screen bg-background">
-            <Component />
-        </main>
-    );
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Component />
+    </main>
+  );
 }

@@ -39,7 +39,7 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 1000ms ease-out;
+  animation: fadeIn 1500ms ease-out;
 }
 
 @layer base {

@@ -9,11 +9,12 @@ export default function Component() {
   const [animate, setAnimate] = useState(false);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     setTimeout(() => {
       setAnimate(true);
       setLoading(false);
-    }, 1000); // Simulate loading time
+    }, 1000);
   }, []);
 
   const Skeleton = ({ width, height }) => (
@@ -35,7 +36,14 @@ export default function Component() {
             <Skeleton width="200px" height="30px" />
             <Skeleton width="600px" height="100px" className="mt-4" />
           </section>
-          {/* Repeat for other sections as needed */}
+          <section id="experience" className="mb-10 md:mb-14 lg:mb-16">
+            <Skeleton width="200px" height="30px" />
+            <Skeleton width="600px" height="200px" className="mt-4" />
+          </section>
+          <section id="projects" className="mb-10 md:mb-14 lg:mb-16">
+            <Skeleton width="200px" height="30px" />
+            <Skeleton width="600px" height="200px" className="mt-4" />
+          </section>
         </main>
       </div>
     );
@@ -43,18 +51,25 @@ export default function Component() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-visible">
-      <main className="flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20">
+      <main className={`flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20 ${animate ? "animate-fade-in" : ""}`}>
         <section id="about" className="mb-12 md:mb-15 lg:mb-16">
-          <h1 className={`text-7xl font-extrabold tracking-tighter mb-1 leading-normal ${animate ? "animate-fade-in" : ""}`}>
+          <h1 className="text-7xl font-extrabold tracking-tighter mb-1 leading-normal">
             Miller Ding
           </h1>
           <p className="mt-4 text-xl text-black font-medium font-mono">
-            Computer science student in Toronto, Ontario. Currently pursuing a <br />
-            bachelor&apos;s degree from the University of Ottawa
+            Computer science student in Toronto, Ontario. 2nd year undergraduate at the University of Ottawa.
+          </p>
+          <p className="mt-4 text-xl text-gray-500 font-medium font-mono">
+            Currently working on a{" "}
+            <span className="relative inline-block">
+              <Link href="/home" target="_blank" className="relative inline-block z-10 underline underline-offset-8 hover:text-stone-400">
+                website frontend
+              </Link>
+            </span>
           </p>
         </section>
         <section id="education" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter mb-4">Education</h2>
+          <h2 className={`text-3xl font-bold tracking-tighter mb-4 `}>Education</h2>
           <div className="grid gap-6">
             <div>
               <h3 className="text-2xl font-bold">Honours B.Sc in Computer Science, Minor in Economics</h3>
