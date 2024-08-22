@@ -51,7 +51,7 @@ export default function Component() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-visible">
-      <main className={`flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20 ${animate ? "animate-fade-in" : ""}`}>
+      <main className={`font-sans flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20 ${animate ? "animate-fade-in" : ""}`}>
         <section id="about" className="mb-12 md:mb-15 lg:mb-16">
           <h1 className="text-7xl font-extrabold tracking-tighter mb-1 leading-normal">
             Miller Ding
@@ -112,6 +112,20 @@ export default function Component() {
           <h2 className="text-3xl font-bold tracking-tighter mb-4">Projects</h2>
           <div className="grid gap-6">
             <div>
+              <h3 className="text-2xl font-bold">HoloLabs, 2024</h3>
+              <p className="text-muted-foreground">
+                Front-end web app to interact with various AI tools we created. Added support for API access and wrote documentation for commercial users. Designed the UI/UX and implemented this with React, Tailwind, and Next.Js.
+              </p>
+              <div className="mt-2 flex gap-2">
+                <Badge>JavaScript</Badge>
+                <Badge>React</Badge>
+                <Badge>TailwindCSS</Badge>
+                <Badge>Next.js</Badge>
+                <Badge>Cloudflare Pages</Badge>
+                <Badge>Figma</Badge>
+              </div>
+            </div>
+            <div>
               <h3 className="text-2xl font-bold">Holo AI, 2024</h3>
               <p className="text-muted-foreground">
                 A mobile app designed for productivity and
@@ -151,44 +165,6 @@ export default function Component() {
               <div className="mt-2 flex gap-2">
                 <Badge>JavaScript</Badge>
                 <Badge>Html/Css</Badge>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="skills" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter mb-4">Skills</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div className="col-span-2 sm:col-span-3 md:col-span-4">
-              <h3 className="text-2xl font-bold mb-2">Languages and Frameworks</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                <div>Java</div>
-                <div>Python</div>
-                <div>Spring Boot</div>
-                <div>JavaScript</div>
-                <div>MySQL</div>
-                <div>MyBatis</div>
-                <div>React</div>
-                <div>TailwindCSS</div>
-                <div>Next.js</div>
-              </div>
-            </div>
-            <div className="col-span-2 sm:col-span-3 md:col-span-4">
-              <h3 className="text-2xl font-bold mb-2">Technologies</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                <div>Git</div>
-                <div>GitLab</div>
-                <div>Postman</div>
-                <div>Maven</div>
-                <div>DBeaver</div>
-                <div>Adobe After Effects</div>
-                <div>Adobe Photoshop</div>
-                <div>Adobe Illustrator</div>
-                <div>Adobe XD</div>
-                <div>Figma</div>
-                <div>Linux</div>
-                <div>FFmpeg</div>
-                <div>Cloud Infrastructure Deployment</div>
-                <div>Alibaba Elastic Compute Service (ECS)</div>
               </div>
             </div>
           </div>
