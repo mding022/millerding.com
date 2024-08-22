@@ -62,7 +62,7 @@ export default function Component() {
           <p className="mt-4 text-xl text-gray-500 font-medium font-mono">
             Currently working on a{" "}
             <span className="relative inline-block">
-              <Link href="/home" target="_blank" className="relative inline-block z-10 underline underline-offset-8 hover:text-stone-400">
+              <Link href="https://hololabs.tech" target="_blank" className="relative inline-block z-10 underline underline-offset-8 hover:text-stone-400">
                 website frontend
               </Link>
             </span>
