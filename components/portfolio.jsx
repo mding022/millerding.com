@@ -50,8 +50,8 @@ export default function Component() {
   }
 
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-visible">
-      <main className={`font-sans flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20 ${animate ? "animate-fade-in" : ""}`}>
+    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-x-hidden overflow-y-auto">
+      <main className={`font-sans flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}>
         <section id="about" className="mb-12 md:mb-15 lg:mb-16">
           <h1 className="text-7xl font-extrabold tracking-tighter mb-1 leading-normal">
             Miller Ding
