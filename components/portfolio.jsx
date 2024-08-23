@@ -59,14 +59,6 @@ export default function Component() {
           <p className="mt-4 text-xl text-black font-medium font-mono">
             Computer science student in Toronto, Ontario. 2nd year undergraduate at the University of Ottawa.
           </p>
-          <p className="mt-4 text-xl text-gray-500 font-medium font-mono">
-            Currently working on a{" "}
-            <span className="relative inline-block">
-              <Link href="https://hololabs.tech" target="_blank" className="relative inline-block z-10 underline underline-offset-8 hover:text-stone-400">
-                website frontend
-              </Link>
-            </span>
-          </p>
         </section>
         <section id="education" className="mb-10 md:mb-14 lg:mb-16">
           <h2 className={`text-3xl font-bold tracking-tighter mb-4 `}>Education</h2>
