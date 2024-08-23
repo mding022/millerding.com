@@ -50,8 +50,8 @@ export default function Component() {
   }
 
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-x-hidden overflow-y-auto">
-      <main className={`font-sans flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}>
+    <div className="flex flex-col min-h-[100dvh] max-w-full bg-background text-foreground overflow-x-hidden overflow-y-auto">
+      <main className={`font-sans flex-1 w-full container px-2 sm:px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}>
         <section id="about" className="mb-12 md:mb-15 lg:mb-16">
           <h1 className="text-7xl font-extrabold tracking-tighter mb-1 leading-normal">
             Miller Ding
@@ -108,11 +108,18 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <section id="projects" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter mb-4">Projects</h2>
+        <section id="projects" className="mb-10 md:mb-14 lg:mb-16 overflow-x-auto">
+          <h2 className="text-3xl font-bold tracking-tighter mb-4 flex items-center">
+            Projects
+            <span className="ml-2 block lg:hidden">
+              <ScrollArrow className="w-8 h-8" />
+            </span>
+          </h2>
           <div className="grid gap-6">
             <div>
-              <h3 className="text-2xl font-bold">HoloLabs, 2024</h3>
+              <Link href="https://hololabs.tech" target="_blank">
+                <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">HoloLabs, 2024</span>
+              </Link>
               <p className="text-muted-foreground">
                 Front-end web app to interact with various AI tools we created. Added support for API access and wrote documentation for commercial users. Designed the UI/UX and implemented this with React, Tailwind, and Next.Js.
               </p>
@@ -142,9 +149,9 @@ export default function Component() {
               </div>
             </div>
             <div>
-              <a href="https://github.com/mding022/aeapi" className="text-2xl font-bold">
-                <h3>After Effects API, 2024</h3>
-              </a>
+              <Link href="https://github.com/mding022/aeapi" target="_blank">
+                <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">After Effects API, 2024</span>
+              </Link>
               <p className="text-muted-foreground">
                 Developed a REST API in Java Spring that programmatically processes images
                 and videos, applying dynamic layering to After Effects project file templates. This system enables automated
@@ -200,4 +207,23 @@ export default function Component() {
       </main>
     </div>
   );
+}
+
+function ScrollArrow() {
+  return (<svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.65698 9.17157L4.24276 7.75735L0.00012207 12L4.24276 16.2426L5.65698 14.8284L3.82858 13H10.0001V11H3.82851L5.65698 9.17157Z"
+      fill="currentColor"
+    />
+    <path
+      d="M14.0001 11V13H20.1716L18.3432 14.8284L19.7574 16.2426L24.0001 12L19.7574 7.75735L18.3432 9.17157L20.1717 11H14.0001Z"
+      fill="currentColor"
+    />
+  </svg>);
 }
