@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import Button from "@mui/material/Button";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useEffect, useState } from "react";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 export default function Component() {
   const [animate, setAnimate] = useState(false);
@@ -54,7 +55,7 @@ export default function Component() {
         className={`font-sans flex-1 w-full container px-2 sm:px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}
       >
         <section id="about" className="mb-12 md:mb-15 lg:mb-16">
-          <h1 className="text-7xl font-extrabold tracking-tighter mb-1 leading-normal">
+          <h1 className="text-7xl font-black tracking-tighter mb-1 leading-normal">
             Miller Ding
           </h1>
           <p className="mt-4 text-xl text-black font-medium font-mono">
@@ -153,6 +154,24 @@ export default function Component() {
           </h2>
           <div className="grid gap-6">
             <div>
+              <Link href="https://watches.millerding.com" target="_blank">
+                <span className="text-2xl font-bold underline-offset-4 text-purple-700 hover:text-purple-600">
+                  <span className="underline">TheTimepiece, 2024</span><span className="font-normal text-gray-400 no-underline">&nbsp;&nbsp;Work in Progress</span>
+                </span>
+              </Link>
+              <p className="text-muted-foreground">
+                Landing page for a e-commerce business selling our custom handcrafted automatic watches. Fully designed the UI, UX, and CMS. Built with Next.js, React, Tailwind, and Framer Motion for component animations. Order processing done using Shopify.
+              </p>
+              <div className="mt-2 flex gap-2">
+                <Badge>Next.js</Badge>
+                <Badge>React</Badge>
+                <Badge>TailwindCSS</Badge>
+                <Badge>Framer Motion</Badge>
+                <Badge>Shopify</Badge>
+                <Badge>SEO</Badge>
+              </div>
+            </div>
+            <div>
               <Link href="https://hololabs.pages.dev" target="_blank">
                 <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">
                   HoloLabs, 2024
@@ -228,24 +247,27 @@ export default function Component() {
           <h2 className="text-3xl font-bold tracking-tighter mb-4">Contact</h2>
           <div className="grid gap-6">
             <div>
-              <p className="text-muted-foreground">
-                My contact information and links:
-              </p>
-              <ul className="mt-2 list-disc pl-4 space-y-1 text-muted-foreground">
-                <li>Email: mding022@uottawa.ca</li>
-                <li>
-                  LinkedIn:{" "}
+              <div>
+                <div className="flex items-center">
+                  <Mail size={18} />
+                  <span className="ml-1 mr-2 font-extrabold">Email</span>
+                  <span>mding022@uottawa.ca</span>
+                </div>
+                <div className="flex items-center">
+                  <Linkedin size={18} />
+                  <span className="ml-1 mr-2 font-extrabold">Linkedin</span>
                   <Link
-                    href="https://linkedin.com/in/millerding"
+                    href="https://www.linkedin.com/in/millerding/"
                     target="_blank"
                     className="underline"
                     prefetch={false}
                   >
-                    linkedin.com/in/millerding
+                    linkedin.com/in/millerding/
                   </Link>
-                </li>
-                <li>
-                  GitHub:{" "}
+                </div>
+                <div className="flex items-center">
+                  <Github size={18} />
+                  <span className="ml-1 mr-2 font-extrabold">GitHub</span>
                   <Link
                     href="https://github.com/mding022"
                     target="_blank"
@@ -254,9 +276,9 @@ export default function Component() {
                   >
                     github.com/mding022
                   </Link>
-                </li>
-              </ul>
-              <div className="mt-4">
+                </div>
+              </div>
+              <div className="mt-5">
                 <Button
                   variant="outlined"
                   color="inherit"
