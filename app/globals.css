@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --background: 240 5% 95%;
+    --animation: gradient 15s ease infinite;
     --foreground: 240 10% 10%;
     --primary: 240 5% 95%;
     --primary-foreground: 240 10% 10%;
@@ -41,6 +42,14 @@
 .animate-fade-in {
   animation: fadeIn 550ms ease-out;
 }
+
+@layer utilities {
+  .animate-ping-once {
+    @apply animate-ping; /* Apply the base ping animation */
+    animation-iteration-count: 1; /* Ensure it only runs once */
+  }
+}
+
 
 @layer base {
   * {

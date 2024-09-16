@@ -26,7 +26,7 @@ export default function Component() {
 
   if (loading) {
     return (
-      <div className="flex flex-col min-h-[100dvh] bg-background text-foreground overflow-visible">
+      <div className="flex flex-col min-h-[100dvh] text-foreground overflow-visible bg-background">
         <main className="flex-1 container px-4 md:px-6 py-12 md:py-16 lg:py-20">
           <section id="about" className="mb-12 md:mb-15 lg:mb-16">
             <Skeleton width="300px" height="40px" />
@@ -51,13 +51,23 @@ export default function Component() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] max-w-full bg-background text-foreground overflow-x-hidden overflow-y-auto">
+      <div className="fixed inset-0 z-0 bg-[radial-gradient(#c1c3c7_1px,transparent_1px)] [background-size:16px_16px] animate-fade-in"></div>
       <main
-        className={`font-sans flex-1 w-full container px-2 sm:px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}
+        className={`relative z-10 font-sans flex-1 w-full container px-2 sm:px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}
       >
         <section id="about" className="mb-12 md:mb-15 lg:mb-16">
-          <h1 className="text-7xl font-black tracking-tighter mb-1 leading-normal">
-            Miller Ding
-          </h1>
+          <div className="relative cursor-pointer">
+            {/* Pinging text */}
+            <h1 className="absolute text-7xl font-black text-red-400 opacity-30 tracking-tighter mb-1 leading-normal animate-ping-once">
+              Miller Ding
+            </h1>
+
+            {/* Solid text */}
+            <h1 className="relative text-7xl font-black tracking-tighter mb-1 leading-normal transform transition-transform ease-in-out duration-300 hover:-translate-y-1 hover:translate-x-1">
+              Miller Ding
+            </h1>
+          </div>
+
           <p className="mt-4 text-xl text-black font-medium font-mono">
             Computer science student in Toronto, Ontario. 2nd year undergraduate
             at the University of Ottawa.
@@ -154,9 +164,35 @@ export default function Component() {
           </h2>
           <div className="grid gap-6">
             <div>
-              <Link href="https://watches.millerding.com" target="_blank">
+              <Link href="https://watches.millerding.com" target="_blank" className="flex items-center">
+                <div className="relative">
+                  {/* Pinging lightning bolt */}
+                  <svg
+                    className="absolute animate-ping"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9 21.5L17.5 13L13 10L15 2.5L6.5 11L11 14L9 21.5Z" fill="#e3b13b" />
+                  </svg>
+
+                  {/* Solid lightning bolt */}
+                  <svg
+                    className="relative"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9 21.5L17.5 13L13 10L15 2.5L6.5 11L11 14L9 21.5Z" fill="#e3b13b" />
+                  </svg>
+                </div>
+
                 <span className="text-2xl font-bold underline-offset-4 text-purple-700 hover:text-purple-600">
-                  <span className="underline">TheTimepiece, 2024</span><span className="font-normal text-gray-400 no-underline">&nbsp;&nbsp;Work in Progress</span>
+                  <span className="underline ml-1">TheTimepiece, 2024</span><span className="font-normal text-gray-400 no-underline">&nbsp;&nbsp;Work in Progress</span>
                 </span>
               </Link>
               <p className="text-muted-foreground">
@@ -279,15 +315,13 @@ export default function Component() {
                 </div>
               </div>
               <div className="mt-5">
-                <Button
-                  variant="outlined"
-                  color="inherit"
-                  endIcon={<OpenInNewIcon />}
-                  href="/resume.pdf"
-                  target="_blank"
-                >
-                  View Resume
-                </Button>
+                <Link href="/resume.pdf" target="_blank">
+                  <button class="relative inline-block font-medium group py-1.5 px-2.5">
+                    <span class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-purple-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span class="absolute inset-0 w-full h-full bg-white border border-purple-900 group-hover:bg-indigo-50"></span>
+                    <span class="relative text-purple-800 ">View Resume</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
