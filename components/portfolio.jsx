@@ -55,7 +55,7 @@ export default function Component() {
       <main
         className={`relative z-10 font-sans flex-1 w-full container px-2 sm:px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 mx-auto ${animate ? "animate-fade-in" : ""}`}
       >
-        <section id="about" className="mb-12 md:mb-15 lg:mb-16">
+        <section id="about" className="mb-12 md:mb-13 lg:mb-16">
           <div className="relative cursor-pointer">
             {/* Pinging text */}
             <h1 className="absolute text-7xl font-black text-red-400 opacity-30 tracking-tighter mb-1 leading-normal animate-ping-once">
@@ -68,8 +68,8 @@ export default function Component() {
             </h1>
           </div>
 
-          <p className="mt-4 text-xl text-black font-medium font-mono">
-            Computer science student in Toronto, Ontario. 2nd year undergraduate
+          <p className="mt-0.5 text-xl text-gray-600 font-semibold font-mono">
+            Computer science student in Toronto, Ontario.<br /><span className="underline-offset-4 underline">2nd year</span>&nbsp;undergraduate
             at the University of Ottawa.
           </p>
         </section>
