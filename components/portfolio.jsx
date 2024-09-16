@@ -80,18 +80,18 @@ export default function Component() {
               <Linkedin size={32} color="#383838" className="hover:stroke-zinc-600 hover:cursor-pointer transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5" />
             </Link>
           </div>
-          <p className="mt-2 text-xl text-gray-600 font-semibold font-mono"> {/* Adjust margin-top here */}
+          <p className="mt-2 text-xl text-gray-600 font-semibold font-mono hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
             Computer science student in Toronto, Ontario.<br /><span className="underline-offset-4 underline">2nd year</span>&nbsp;undergraduate
             at the University of Ottawa.
           </p>
         </section>
 
-        <section id="education" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className={`text-3xl font-black tracking-tighter mb-4 `}>
+        <section id="education" className="mb-10 md:mb-14 lg:mb-16 ">
+          <h2 className={`text-3xl font-black tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5`}>
             Education
           </h2>
           <div className="grid gap-6">
-            <div>
+            <div className="hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
               <h3 className="text-2xl font-bold">
                 Honours B.Sc in Computer Science, Minor in Economics
               </h3>
@@ -100,7 +100,7 @@ export default function Component() {
               </p>
               <p className="text-muted-foreground">CGPA: 9.3/10.0</p>
             </div>
-            <div>
+            <div className="hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
               <h3 className="text-2xl font-bold">High School Diploma</h3>
               <p className="text-muted-foreground">
                 YCDSB High School, Ontario, 2019 - 2023
@@ -110,11 +110,11 @@ export default function Component() {
           </div>
         </section>
         <section id="experience" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-black tracking-tighter mb-4">
+          <h2 className="text-3xl font-black tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
             Experience
           </h2>
           <div className="grid gap-6">
-            <div>
+            <div className="hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
               <h3 className="text-2xl font-bold">
                 Software Engineering and Design Intern
               </h3>
@@ -141,7 +141,7 @@ export default function Component() {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
               <h3 className="text-2xl font-bold">
                 Computer Assembly Technician
               </h3>
@@ -169,7 +169,7 @@ export default function Component() {
           id="projects"
           className="mb-10 md:mb-14 lg:mb-16 overflow-x-auto"
         >
-          <h2 className="text-3xl font-black tracking-tighter mb-4 flex items-center">
+          <h2 className="text-3xl font-black tracking-tighter mb-4 flex items-center hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
             Projects
             <span className="ml-2 block lg:hidden">
               <ScrollArrow className="w-8 h-8" />
@@ -293,7 +293,7 @@ export default function Component() {
           </div>
         </section>
         <section id="contact" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-black tracking-tighter mb-4">Contact</h2>
+          <h2 className="text-3xl font-black tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">Contact</h2>
           <div className="grid gap-6">
             <div>
               <div>
