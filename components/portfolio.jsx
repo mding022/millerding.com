@@ -58,21 +58,35 @@ export default function Component() {
         <section id="about" className="mb-12 md:mb-13 lg:mb-16">
           <div className="relative cursor-pointer">
             {/* Pinging text */}
-            <h1 className="absolute text-7xl font-black text-red-400 opacity-30 tracking-tighter mb-1 leading-normal animate-ping-once">
+            <h1 className="absolute text-7xl font-black text-red-400 opacity-30 tracking-tighter mb-0 leading-normal animate-ping-once">
               Miller Ding
             </h1>
 
             {/* Solid text */}
-            <h1 className="relative text-7xl font-black tracking-tighter mb-1 leading-normal transform transition-transform ease-in-out duration-300 hover:-translate-y-1 hover:translate-x-1">
+            <h1 className="relative text-7xl font-black tracking-tighter mb-0 leading-normal transform transition-transform ease-in-out duration-300 hover:-translate-y-1 hover:translate-x-1">
               Miller Ding
             </h1>
           </div>
-
-          <p className="mt-0.5 text-xl text-gray-600 font-semibold font-mono">
+          <div className="flex items-center mt-2"> {/* Adjust margin-top here */}
+            <Link
+              href="https://github.com/mding022"
+              target="_blank"
+            >
+              <Github size={32} color="#383838" className="mr-2 hover:stroke-zinc-600 hover:cursor-pointer transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5" />
+            </Link>
+            <Link
+              href="https://linkedin.com/in/millerding"
+              target="_blank"
+            >
+              <Linkedin size={32} color="#383838" className="hover:stroke-zinc-600 hover:cursor-pointer transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5" />
+            </Link>
+          </div>
+          <p className="mt-2 text-xl text-gray-600 font-semibold font-mono"> {/* Adjust margin-top here */}
             Computer science student in Toronto, Ontario.<br /><span className="underline-offset-4 underline">2nd year</span>&nbsp;undergraduate
             at the University of Ottawa.
           </p>
         </section>
+
         <section id="education" className="mb-10 md:mb-14 lg:mb-16">
           <h2 className={`text-3xl font-bold tracking-tighter mb-4 `}>
             Education
@@ -198,7 +212,7 @@ export default function Component() {
               <p className="text-muted-foreground">
                 Landing page for a e-commerce business selling our custom handcrafted automatic watches. Fully designed the UI, UX, and CMS. Built with Next.js, React, Tailwind, and Framer Motion for component animations. Order processing done using Shopify.
               </p>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex gap-2 hover:cursor-default">
                 <Badge>Next.js</Badge>
                 <Badge>React</Badge>
                 <Badge>TailwindCSS</Badge>
@@ -219,7 +233,7 @@ export default function Component() {
                 commercial users. Designed the UI/UX and implemented this with
                 React, Tailwind, and Next.Js.
               </p>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex gap-2 hover:cursor-default">
                 <Badge>JavaScript</Badge>
                 <Badge>React</Badge>
                 <Badge>TailwindCSS</Badge>
@@ -237,7 +251,7 @@ export default function Component() {
                 generation templates, text to video generation, story-based
                 video generation, and short-form content automation.
               </p>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex gap-2 hover:cursor-default">
                 <Badge>Java</Badge>
                 <Badge>Spring</Badge>
                 <Badge>MySQL/MyBatis</Badge>
@@ -257,7 +271,7 @@ export default function Component() {
                 Effects project file templates. This system enables automated
                 rendering of our preset AE animations.{" "}
               </p>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex gap-2 hover:cursor-default">
                 <Badge>Java</Badge>
                 <Badge>Spring</Badge>
                 <Badge>Python</Badge>
@@ -272,7 +286,7 @@ export default function Component() {
                 Utilized market data APIs to screen for stocks that had
                 favourable technical indicators.
               </p>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex gap-2 hover:cursor-default">
                 <Badge>JavaScript</Badge>
                 <Badge>Html/Css</Badge>
               </div>
