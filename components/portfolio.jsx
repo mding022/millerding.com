@@ -61,7 +61,6 @@ export default function Component() {
             <h1 className="absolute text-7xl font-black text-red-400 opacity-30 tracking-tighter mb-0 leading-normal animate-ping-once">
               Miller Ding
             </h1>
-
             {/* Solid text */}
             <h1 className="relative text-7xl font-black tracking-tighter mb-0 leading-normal transform transition-transform ease-in-out duration-300 hover:-translate-y-1 hover:translate-x-1">
               Miller Ding
@@ -88,7 +87,7 @@ export default function Component() {
         </section>
 
         <section id="education" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className={`text-3xl font-bold tracking-tighter mb-4 `}>
+          <h2 className={`text-3xl font-black tracking-tighter mb-4 `}>
             Education
           </h2>
           <div className="grid gap-6">
@@ -111,7 +110,7 @@ export default function Component() {
           </div>
         </section>
         <section id="experience" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter mb-4">
+          <h2 className="text-3xl font-black tracking-tighter mb-4">
             Experience
           </h2>
           <div className="grid gap-6">
@@ -170,7 +169,7 @@ export default function Component() {
           id="projects"
           className="mb-10 md:mb-14 lg:mb-16 overflow-x-auto"
         >
-          <h2 className="text-3xl font-bold tracking-tighter mb-4 flex items-center">
+          <h2 className="text-3xl font-black tracking-tighter mb-4 flex items-center">
             Projects
             <span className="ml-2 block lg:hidden">
               <ScrollArrow className="w-8 h-8" />
@@ -294,7 +293,7 @@ export default function Component() {
           </div>
         </section>
         <section id="contact" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter mb-4">Contact</h2>
+          <h2 className="text-3xl font-black tracking-tighter mb-4">Contact</h2>
           <div className="grid gap-6">
             <div>
               <div>
