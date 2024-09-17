@@ -20,6 +20,7 @@
     "clsx": "^2.1.1",
     "easy-react-text-loop": "^1.0.2",
     "framer-motion": "^11.3.28",
+    "install": "^0.13.0",
     "lucide-react": "^0.427.0",
     "next": "14.2.5",
     "node-fetch": "^3.3.2",
