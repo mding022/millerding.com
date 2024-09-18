@@ -87,7 +87,7 @@ export default function Component() {
         </section>
 
         <section id="education" className="mb-10 md:mb-14 lg:mb-16 ">
-          <h2 className={`text-3xl font-black tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5`}>
+          <h2 className={`text-3xl font-extrabold tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5`}>
             Education
           </h2>
           <div className="grid gap-6">
@@ -110,7 +110,7 @@ export default function Component() {
           </div>
         </section>
         <section id="experience" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-black tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
+          <h2 className="text-3xl font-extrabold tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
             Experience
           </h2>
           <div className="grid gap-6">
@@ -169,7 +169,7 @@ export default function Component() {
           id="projects"
           className="mb-10 md:mb-14 lg:mb-16 overflow-x-auto"
         >
-          <h2 className="text-3xl font-black tracking-tighter mb-4 flex items-center hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
+          <h2 className="text-3xl font-extrabold tracking-tighter mb-4 flex items-center hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
             Projects
             <span className="ml-2 block lg:hidden">
               <ScrollArrow className="w-8 h-8" />
@@ -177,7 +177,7 @@ export default function Component() {
           </h2>
           <div className="grid gap-6">
             <div>
-              <Link href="https://watches.millerding.com" target="_blank" className="flex items-center">
+              <Link href="https://thetimepiece.ca" target="_blank" className="flex items-center">
                 <div className="relative">
                   {/* Pinging lightning bolt */}
                   <svg
@@ -293,7 +293,7 @@ export default function Component() {
           </div>
         </section>
         <section id="contact" className="mb-10 md:mb-14 lg:mb-16">
-          <h2 className="text-3xl font-black tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">Contact</h2>
+          <h2 className="text-3xl font-extrabold tracking-tighter mb-4 hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">Contact</h2>
           <div className="grid gap-6">
             <div>
               <div>
