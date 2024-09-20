@@ -4,12 +4,13 @@ import { Poppins } from 'next/font/google'
 import { Space_Mono } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
+import { ReactNode } from 'react' // Import ReactNode for typing
 
 const fontHeading = Poppins({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-heading',
-    weight: ['100','200','300','400','500','600','700','800','900']
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
 const fontBody = Space_Mono({
@@ -19,7 +20,11 @@ const fontBody = Space_Mono({
     variable: '--font-body',
 })
 
-export default function Layout({ children }) {
+interface LayoutProps {
+    children: ReactNode // Type children properly
+}
+
+export default function Layout({ children }: LayoutProps) {
     return (
         <html lang="en">
             <body

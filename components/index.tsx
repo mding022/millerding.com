@@ -156,7 +156,7 @@ export default function Component() {
           <h2 className="text-3xl font-extrabold tracking-tighter mb-4 flex items-center hover:cursor-default transform transition-transform ease-in-out duration-300 hover:-translate-y-0.5">
             Projects
             <span className="ml-2 block lg:hidden">
-              <ScrollArrow className="w-8 h-8" />
+              <ScrollArrow />
             </span>
           </h2>
           <div className="grid gap-6">
