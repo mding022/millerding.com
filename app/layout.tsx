@@ -1,10 +1,9 @@
-// This is the root layout component for your Next.js app.
-// Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
+// Basic font styling page
 import { Poppins } from 'next/font/google'
 import { Space_Mono } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
-import { ReactNode } from 'react' // Import ReactNode for typing
+import { ReactNode } from 'react'
 
 const fontHeading = Poppins({
     subsets: ['latin'],
@@ -21,7 +20,7 @@ const fontBody = Space_Mono({
 })
 
 interface LayoutProps {
-    children: ReactNode // Type children properly
+    children: ReactNode 
 }
 
 export default function Layout({ children }: LayoutProps) {
