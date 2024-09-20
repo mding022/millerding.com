@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* for homepage */
 @layer base {
   :root {
     --background: 240 5% 95%;
