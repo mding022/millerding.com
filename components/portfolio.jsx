@@ -209,7 +209,7 @@ export default function Component() {
                 </span>
               </Link>
               <p className="text-muted-foreground">
-                Landing page for a e-commerce business selling our custom handcrafted automatic watches. Fully designed the UI, UX, and CMS. Built with Next.js, React, Tailwind, and Framer Motion for component animations. Order processing and CMS done using Shopify.
+                Landing page for an e-commerce business selling our custom handcrafted automatic watches. Fully designed the UI, UX, and CMS. Built with Next.js, React, Tailwind, and Framer Motion for component animations. Order processing and CMS done using Shopify.
               </p>
               <div className="mt-2 flex gap-2 hover:cursor-default">
                 <Badge>Next.js</Badge>
