@@ -1,4 +1,4 @@
-import Component from "../components/portfolio";
+import Component from "../components/index";
 
 export default function Home() {
   return (
