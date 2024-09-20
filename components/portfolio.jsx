@@ -66,7 +66,7 @@ export default function Component() {
               Miller Ding
             </h1>
           </div>
-          <div className="flex items-center mt-2"> {/* Adjust margin-top here */}
+          <div className="flex items-center mt-2">
             <Link
               href="https://github.com/mding022"
               target="_blank"
@@ -84,6 +84,15 @@ export default function Component() {
             Computer science student in Toronto, Ontario.<br /><span className="underline-offset-4 underline">2nd year</span>&nbsp;undergraduate
             at the University of Ottawa.
           </p>
+          <div className="mt-4">
+                <Link href="/resume.pdf" target="_blank">
+                  <button className="relative inline-block font-medium group py-1.5 px-2.5">
+                    <span className="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-purple-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span className="absolute inset-0 w-full h-full bg-white border border-purple-900 group-hover:bg-indigo-50"></span>
+                    <span className="relative text-purple-800">View Resume</span>
+                  </button>
+                </Link>
+              </div>
         </section>
 
         <section id="education" className="mb-10 md:mb-14 lg:mb-16 ">
@@ -326,15 +335,6 @@ export default function Component() {
                     github.com/mding022
                   </Link>
                 </div>
-              </div>
-              <div className="mt-5">
-                <Link href="/resume.pdf" target="_blank">
-                  <button class="relative inline-block font-medium group py-1.5 px-2.5">
-                    <span class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-purple-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                    <span class="absolute inset-0 w-full h-full bg-white border border-purple-900 group-hover:bg-indigo-50"></span>
-                    <span class="relative text-purple-800 ">View Resume</span>
-                  </button>
-                </Link>
               </div>
             </div>
           </div>
