@@ -139,6 +139,23 @@ export default function Content() {
                 </h2>
                 <div className="grid gap-6">
                     <div>
+                        <Link href="https://chart.millerding.com" target="_blank">
+                            <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">
+                                Sankey Charts, 2024
+                            </span>
+                        </Link>
+                        <p className="text-muted-foreground">
+                            Full-stack web app that gives users a simplified way to create sankey diagrams for various use cases. The website parses the user&apos;s data and interacts with SankeyMatic to generate flow charts.
+                        </p>
+                        <div className="mt-2 flex gap-2 hover:cursor-default">
+                            <Badge>Spring</Badge>
+                            <Badge>React</Badge>
+                            <Badge>TailwindCSS</Badge>
+                            <Badge>Next.js</Badge>
+                            <Badge>Puppeteer.js</Badge>
+                        </div>
+                    </div>
+                    <div>
                         <Link href="https://thetimepiece.ca" target="_blank" className="flex items-center">
                             <div className="relative">
                                 {/* Pinging lightning bolt */}
