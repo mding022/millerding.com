@@ -139,6 +139,25 @@ export default function Content() {
                 </h2>
                 <div className="grid gap-6">
                     <div>
+                        <Link href="https://github.com/mding022/ciena-p2p" target="_blank">
+                            <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">
+                                HTH Ciena P2P Challenge (2024) - Third Place Winnder
+                            </span>
+                        </Link>
+                        <p className="text-muted-foreground">
+                            Fully designed, created, and paired the backend and frontend for a fully decentralized peer to peer, chunk splitting and building file sharing service, using Next.js for the frontend and Spring Boot for the backend. The project was implemented in 12 hours and had various security features, such as SSH tunnelling to prevent port exposure, CORS policies, and HTTPS authentication controllers in Spring. My final application followed the guidelines of the Spring MVC architecture, as well as 512-byte chunk splitting and rebuilding algorithms between nodes, and various redundancy features.
+                        </p>
+                        <div className="mt-2 flex gap-2 hover:cursor-default">
+                            <Badge>Spring MVC</Badge>
+                            <Badge>Java</Badge>
+                            <Badge>Python</Badge>
+                            <Badge>Next.js</Badge>
+                            <Badge>React</Badge>
+                            <Badge>TCP/IP</Badge>
+                            <Badge>SSH Tunnelling</Badge>
+                        </div>
+                    </div>
+                    <div>
                         <Link href="https://chart.millerding.com" target="_blank">
                             <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">
                                 Sankey Charts, 2024
