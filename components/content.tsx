@@ -141,7 +141,7 @@ export default function Content() {
                     <div>
                         <Link href="https://github.com/mding022/ciena-p2p" target="_blank">
                             <span className="text-2xl font-bold underline underline-offset-4 text-purple-700 hover:text-purple-600">
-                                HTH Ciena P2P Challenge (2024) - Third Place Winnder
+                                HTH Ciena P2P Challenge (2024) - Third Place Winner
                             </span>
                         </Link>
                         <p className="text-muted-foreground">
