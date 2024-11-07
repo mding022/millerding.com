@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-interface ScrollableSectionProps {
-    children: React.ReactNode;
-}
-
-const ScrollableSection: React.FC<ScrollableSectionProps> = ({ children }) => {
+const ScrollableSection = ({ children }) => {
     const [scrollProgress, setScrollProgress] = useState(0);
 
     useEffect(() => {
-        const handleScroll = (event: any) => {
+        const handleScroll = (event) => {
             const target = event.target;
             const progress = target.scrollTop / (target.scrollHeight - target.clientHeight);
             setScrollProgress(progress);
@@ -26,7 +22,7 @@ const ScrollableSection: React.FC<ScrollableSectionProps> = ({ children }) => {
         };
     }, []);
 
-    const calculateScale = (index: number) => {
+    const calculateScale = (index) => {
         const triggerPoints = [0.15, 0.4, 0.72, 0.95];
         const activeTrigger = triggerPoints[index];
         return Math.abs(scrollProgress - activeTrigger) < 0.12 ? 1.1 : 0.9;
